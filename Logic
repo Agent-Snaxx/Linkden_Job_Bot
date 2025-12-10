@@ -1,0 +1,48 @@
+
+You type → bot fills the answer → continues.
+
+---
+
+## 4. Pagination Logic (Unbreakable)
+LinkedIn changes their UI often, so this script checks for all:
+
+- `button[aria-label="Next"]`
+- Chevron right icon
+- Next text button
+
+If any exist → bot advances.  
+If none exist → job search completed.
+
+---
+
+## 5. CSV Logging
+Each job logs:
+
+| Platform | Search Term | Job Title | Company | Location | Status | Notes |
+|----------|-------------|-----------|---------|----------|--------|-------|
+
+Status values:
+- `Applied`
+- `Skipped`
+- `Failed`
+
+---
+
+## 6. Timing Algorithm
+To avoid rate-limits:
+- Random waits 25–45 sec between job attempts
+- Scroll events added to force lazy-load of listings
+- Modal close logic bulletproofed
+
+---
+
+## 7. Error Handling
+Bot collects:
+- Page failure screenshots
+- CSV error rows
+- Automatic dismiss of broken forms
+
+---
+
+## 8. Headless Mode
+Set in `.env`:
